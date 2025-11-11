@@ -9,6 +9,7 @@ rapwter4.upload.wait_for_upload_port=true
 rapwter4.upload.native_usb=false
 
 # Build settings
+rapwter4.build.crossprefix=arm-none-eabi-
 rapwter4.build.mcu=cortex-m4
 rapwter4.build.architecture=cortex-m4
 rapwter4.build.f_cpu=48000000L
@@ -18,6 +19,7 @@ rapwter4.build.variant=rawpter4_variant
 rapwter4.build.extra_flags=
 rapwter4.build.defines=-DF_CPU=48000000 -DNO_USB -DARDUINO_RAWPTER4
 rapwter4.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+
 
 # Optional: FPU and float ABI (if needed)
 rapwter4.build.fpu=-mfpu=fpv4-sp-d16
