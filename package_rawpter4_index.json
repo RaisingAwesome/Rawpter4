@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "Rawpter4 Serial Board",
+          "name": "Rawpter4 Flight Controller",
           "architecture": "ra4m1",
           "version": "1.0.0",
           "category": "Contributed",
