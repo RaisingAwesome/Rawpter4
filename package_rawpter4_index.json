@@ -30,22 +30,17 @@
             {
               "packager": "arduino",
               "name": "bossac",
-              "version": "1.9.1-arduino2"
+              "version": "1.9.1-arduino5"
             },
             {
               "packager": "arduino",
               "name": "dfu-util",
-              "version": "0.10.0-arduino1"
+              "version": "0.11.0-arduino5"
             },
             {
               "packager": "arduino",
               "name": "openocd",
               "version": "0.11.0-arduino2"
-            },
-            {
-              "packager": "arduino",
-              "name": "rp2040tools",
-              "version": "1.0.6"
             }
           ]
         }
