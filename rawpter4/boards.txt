@@ -1,4 +1,4 @@
-rapwter4.name=Rawpter 4 RA4M1
+rapwter4.name=Rawpter4 Flight Controller
 
 rapwter4.upload.tool=rfp_uploader
 rapwter4.upload.protocol=serial

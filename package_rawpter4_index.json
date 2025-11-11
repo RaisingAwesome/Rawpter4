@@ -16,10 +16,10 @@
           "category": "Contributed",
           "url": "https://raw.githubusercontent.com/RaisingAwesome/Rawpter4/main/1.0.0.tar.gz",
           "archiveFileName": "1.0.0.tar.gz",
-          "checksum": "SHA-256-HERE",
-          "size": 123456,
+          "checksum": "12652ac2e7bcd607ec52b5647e60b43d88e11ccab4c433032fe39a70a0aa63ed",
+          "size": 1574,
           "boards": [
-            { "name": "Rawpter4 Serial Board" }
+            { "name": "Rawpter4 Flight Controller" }
           ],
           "toolsDependencies": []
         }
