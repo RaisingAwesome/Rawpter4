@@ -1,0 +1,20 @@
+rapwter4.name=Rawpter 4 RA4M1
+
+rapwter4.upload.tool=rfp_uploader
+rapwter4.upload.protocol=serial
+rapwter4.upload.speed=115200
+rapwter4.upload.use_1200bps_touch=false
+rapwter4.upload.wait_for_upload_port=true
+rapwter4.upload.native_usb=false
+
+rapwter4.build.mcu=RA4M1
+rapwter4.build.f_cpu=48000000L
+rapwter4.build.board=RA4M1_CUSTOM
+rapwter4.build.core=arduino
+rapwter4.build.variant=rawpter4_variant
+rapwter4.build.extra_flags=
+
+rapwter4.bootloader.tool=rfp_uploader
+rapwter4.bootloader.low_fuses=0xFF
+rapwter4.bootloader.high_fuses=0xD8
+rapwter4.bootloader.extended_fuses=0xFD

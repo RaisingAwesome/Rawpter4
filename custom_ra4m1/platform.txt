@@ -1,0 +1,5 @@
+tools.rfp_uploader.path=
+tools.rfp_uploader.cmd.path={runtime.tools.rfp_uploader.path}
+tools.rfp_uploader.cmd=rfp-cli.exe
+tools.rfp_uploader.upload.pattern="\"{cmd}\" -c COM{serial.port} -b {upload.speed} -f \"{build.path}/{build.project_name}.bin\""
+tools.rfp_uploader.upload.params.verbose=
