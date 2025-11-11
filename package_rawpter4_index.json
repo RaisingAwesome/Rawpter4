@@ -1,0 +1,29 @@
+{
+  "packages": [
+    {
+      "name": "rawpter4",
+      "maintainer": "Sean",
+      "websiteURL": "https://github.com/RaisingAwesome/Rawpter4",
+      "email": "your@email.com",
+      "help": {
+        "online": "https://github.com/RaisingAwesome/Rawpter4"
+      },
+      "platforms": [
+        {
+          "name": "Rawpter4 Serial Board",
+          "architecture": "ra4m1",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "url": "https://raw.githubusercontent.com/RaisingAwesome/Rawpter4/main/1.0.0.tar.gz",
+          "archiveFileName": "1.0.0.tar.gz",
+          "checksum": "SHA-256-HERE",
+          "size": 123456,
+          "boards": [
+            { "name": "Rawpter4 Serial Board" }
+          ],
+          "toolsDependencies": []
+        }
+      ]
+    }
+  ]
+}
