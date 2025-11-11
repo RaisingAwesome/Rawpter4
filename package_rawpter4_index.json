@@ -14,10 +14,10 @@
           "architecture": "ra4m1",
           "version": "1.0.0",
           "category": "Contributed",
-          "url": "https://raw.githubusercontent.com/RaisingAwesome/Rawpter4/main/1.0.0.tar.gz",
+          "url": "https://raw.githubusercontent.com/RaisingAwesome/Rawpter4/main/rawpter4-1.0.0.tar.gz",
           "archiveFileName": "1.0.0.tar.gz",
-          "checksum": "SHA-256:FCB9BC781073D584BF33F92238B014651841C1C8B581B187413BF29391209169",
-          "size": 3730,
+          "checksum": "SHA-256:C600784BAB78E01EA2C828A0178A910B89A70265058F4B5B7A142A01ED7BDE5E",
+          "size": 8990054,
           "boards": [
             { "name": "Rawpter4 Flight Controller" }
           ],
