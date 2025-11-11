@@ -1,6 +1,6 @@
 ##############################################################
 
-rawpter4.name=Arduino UNO R4 WiFi
+rawpter4.name=Rawpter Flight Controller
 rawpter4.build.core=arduino
 rawpter4.build.crossprefix=arm-none-eabi-
 rawpter4.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
@@ -32,15 +32,8 @@ rawpter4.compiler.fsp.includes={build.variant.path}/includes.txt
 rawpter4.compiler.fsp.extra_ldflags=--specs=nano.specs -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
 rawpter4.compiler.fsp="{build.variant.path}/libs/libfsp.a"
 
-rawpter4.upload.tool=bossac
-rawpter4.upload.tool.default=bossac
-rawpter4.upload.protocol=sam-ba
-rawpter4.upload.transport=
-rawpter4.upload.vid=0x2341
-rawpter4.upload.pid=0x1002
-rawpter4.upload.use_1200bps_touch=true
-rawpter4.upload.wait_for_upload_port=false
-rawpter4.upload.native_usb=true
+rawpter4.upload.tool=rfp-cli
+rawpter4.upload.protocol=serial
 rawpter4.upload.maximum_size=262144
 rawpter4.upload.maximum_data_size=32768
 

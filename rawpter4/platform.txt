@@ -100,20 +100,10 @@ recipe.output.save_file={build.project_name}.{build.variant}.bin
 # Uploader tools
 # ---------------------
 
-tools.dfu-util.path={runtime.tools.dfu-util-0.11.0-arduino5.path}
-tools.dfu-util.cmd=dfu-util
-tools.dfu-util.upload.params.verbose=-d
-tools.dfu-util.upload.params.quiet=
-# tools.dfu-util.upload.pattern="{path}/{cmd}" --device {upload.vid}:{pid.0},:{upload.pid} -D "{build.path}/{build.project_name}.bin" -a{upload.interface} -R
-# -Q introduced with latest dfu-util
-tools.dfu-util.upload.pattern="{path}/{cmd}" --device {upload.vid}:{pid.0},:{upload.pid} -D "{build.path}/{build.project_name}.bin" -a{upload.interface} -Q
-
-tools.bossac.path={runtime.tools.bossac-1.9.1-arduino5.path}
-tools.bossac.cmd=bossac
-tools.bossac.upload.params.verbose=-d
-tools.bossac.upload.params.quiet=
-tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U -e -w "{build.path}/{build.project_name}.bin" -R
-
+tools.rfp-cli.cmd=rfp-cli.exe
+tools.rfp-cli.path={runtime.tools.rfp-cli.path}/rfp-cli.exe
+tools.rfp-cli.upload.params.verbose=
+tools.rfp-cli.upload.pattern="{path}" /d R7FA4M1AB3CFM /c {serial.port} /b /f "{build.path}/{build.project_name}.bin"
 # Required discoveries and monitors
 # ---------------------------------
 pluggable_discovery.required.0=builtin:serial-discovery
@@ -145,9 +135,3 @@ debug.cortex-debug.custom.overrideRestartCommands.0=monitor reset halt
 debug.cortex-debug.custom.overrideRestartCommands.1=monitor gdb_sync
 debug.cortex-debug.custom.overrideRestartCommands.2=c
 debug.cortex-debug.custom.request=attach
-
-tools.rfp_uploader.path=
-tools.rfp_uploader.cmd.path={runtime.tools.rfp_uploader.path}
-tools.rfp_uploader.cmd=rfp-cli.exe
-tools.rfp_uploader.upload.pattern="\"{cmd}\" -c COM{serial.port} -b {upload.speed} -f \"{build.path}/{build.project_name}.bin\""
-tools.rfp_uploader.upload.params.verbose=
