@@ -29,9 +29,9 @@ jlink.programmer.protocol=jlink
 jlink.programmer.transport_script={runtime.platform.path}/debugger/select_swd.cfg
 
 rfp.name=Renesas Flash Programmer
-rfp.communication=USB
+rfp.communication=serial
 rfp.protocol=
-rfp.program.protocol=
-rfp.program.tool=rfp-cli
-rfp.program.tool.default=rfp-cli
-rfp.program.extra_params=-device RA -port {port} -p 
+rfp.program.tool=rfpcli
+rfp.program.tool.default=rfpcli
+rfp.program.extra_params=-device RA -port {serial.port} -p
+

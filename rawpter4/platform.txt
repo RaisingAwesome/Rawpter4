@@ -1,24 +1,9 @@
 #
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
-
+# Sean's version
 name=Arduino Renesas UNO R4 Boards
 version=1.5.1
-
-build.core.path={runtime.platform.path}/cores/arduino
-build.variant.path={runtime.platform.path}/variants/{build.variant}
-
-# Compile all .c and .cpp files in the core
-recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} -o "{build.path}/{source_file.o}" "{source_file}"
-recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} -o "{build.path}/{source_file.o}" "{source_file}"
-
-# Archive all core object files
-archive_file_path={build.path}/core.a
-archive_file_files={object_files}
-recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" rcs "{archive_file_path}" {archive_file_files}
-
-# Link everything together
-recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} -o "{build.path}/{build.project_name}.elf" -Wl,--start-group "{build.path}/sketch_merged.o" "{archive_file_path}" -Wl,--end-group -L"{build.variant.path}" -T"{build.variant.path}/fsp.ld"
 
 # Compile variables
 # ------------------------
@@ -114,20 +99,16 @@ recipe.output.save_file={build.project_name}.{build.variant}.bin
 
 # Uploader tools
 # ---------------------
+tools.serial.cmd=echo
+tools.serial.path=
+tools.serial.upload.pattern="{cmd} Upload triggered for {build.project_name}.bin"
 
-tools.rfp-cli.cmd=rfp-cli.exe
-tools.rfp-cli.path={runtime.tools.rfp-cli.path}/rfp-cli.exe
-tools.rfp-cli.upload.params.verbose=
-tools.rfp-cli.upload.pattern="{path}" /d R7FA4M1AB3CFM /c {serial.port} /b /f "{build.path}/{build.project_name}.bin"
 # Required discoveries and monitors
 # ---------------------------------
 pluggable_discovery.required.0=builtin:serial-discovery
 pluggable_discovery.required.1=builtin:mdns-discovery
 pluggable_discovery.required.2=builtin:dfu-discovery
 pluggable_monitor.required.serial=builtin:serial-monitor
-
-
-
 
 #
 # Debugger
@@ -153,3 +134,4 @@ debug.cortex-debug.custom.overrideRestartCommands.0=monitor reset halt
 debug.cortex-debug.custom.overrideRestartCommands.1=monitor gdb_sync
 debug.cortex-debug.custom.overrideRestartCommands.2=c
 debug.cortex-debug.custom.request=attach
+this.should.break=💥

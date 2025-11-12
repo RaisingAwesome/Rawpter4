@@ -31,13 +31,9 @@ rawpter4.compiler.tinyusb.cxxflags=-DCFG_TUSB_MCU=OPT_MCU_RAXXX
 rawpter4.compiler.fsp.includes={build.variant.path}/includes.txt
 rawpter4.compiler.fsp.extra_ldflags=--specs=nano.specs -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
 rawpter4.compiler.fsp="{build.variant.path}/libs/libfsp.a"
-
-rawpter4.upload.tool=rfp-cli
-rawpter4.upload.protocol=
-
+rawpter4.upload.tool=serial
 rawpter4.upload.maximum_size=262144
 rawpter4.upload.maximum_data_size=32768
-
 rawpter4.debug.server.openocd.scripts.0=interface/{programmer.protocol}.cfg
 rawpter4.debug.server.openocd.scripts.1={programmer.transport_script}
 rawpter4.debug.server.openocd.scripts.2={runtime.platform.path}/debugger/R7FA4M1AB.cfg
