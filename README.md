@@ -14,3 +14,4 @@ You board design needs to have the following RA4M1 pins available for hookup:
 * PinRES: (normally pulled high and taken low to reset after pulling MD low)
 * GND: Any pin that shares ground with the chip
 
+Blog: [https://raisingawesome.site/blogs/R7FA4_Flash](https://raisingawesome.site/blogs/R7FA4_Flash)
