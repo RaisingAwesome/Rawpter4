@@ -1,5 +1,4 @@
 ##############################################################
-
 rawpter4.name=Rawpter Flight Controller
 rawpter4.build.core=arduino
 rawpter4.build.crossprefix=arm-none-eabi-
@@ -13,14 +12,6 @@ rawpter4.build.float-abi=-mfloat-abi=hard
 
 rawpter4.build.board=UNOWIFIR4
 rawpter4.build.defines=-DF_CPU=48000000 -DNO_USB -DBACKTRACE_SUPPORT -DARDUINO_UNOR4_WIFI
-rawpter4.vid.0=0x2341
-rawpter4.pid.0=0x1002
-rawpter4.vid.1=0x2341
-rawpter4.pid.1=0x006D
-rawpter4.upload_port.0.vid=0x2341
-rawpter4.upload_port.0.pid=0x1002
-rawpter4.upload_port.1.vid=0x2341
-rawpter4.upload_port.1.pid=0x006D
 
 rawpter4.compiler.fsp.defines={build.variant.path}/defines.txt
 rawpter4.compiler.fsp.ldflags={build.variant.path}/ldflags.txt
@@ -31,9 +22,15 @@ rawpter4.compiler.tinyusb.cxxflags=-DCFG_TUSB_MCU=OPT_MCU_RAXXX
 rawpter4.compiler.fsp.includes={build.variant.path}/includes.txt
 rawpter4.compiler.fsp.extra_ldflags=--specs=nano.specs -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
 rawpter4.compiler.fsp="{build.variant.path}/libs/libfsp.a"
-rawpter4.upload.tool=serial
+
+rawpter4.upload.tool.default=customUploader
+rawpter4.upload.tool.serial=customUploader
+rawpter4.upload.tool=customUploader
+rawpter4.upload.protocol=custom
+tools.customUploader.upload.port=
 rawpter4.upload.maximum_size=262144
 rawpter4.upload.maximum_data_size=32768
+
 rawpter4.debug.server.openocd.scripts.0=interface/{programmer.protocol}.cfg
 rawpter4.debug.server.openocd.scripts.1={programmer.transport_script}
 rawpter4.debug.server.openocd.scripts.2={runtime.platform.path}/debugger/R7FA4M1AB.cfg

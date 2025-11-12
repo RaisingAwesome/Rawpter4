@@ -7,7 +7,6 @@ version=1.5.1
 
 # Compile variables
 # ------------------------
-
 compiler.warning_flags=-w
 compiler.warning_flags.none=-w
 compiler.warning_flags.default=
@@ -63,6 +62,9 @@ build.usb_flags=
 # numeric vendor ID if available or by board's specific value.
 #build.usb_manufacturer="Unknown"
 
+# Sean Cleaning hooks
+recipe.hooks.compile.pre.1.pattern=cmd /C "del /Q {build.path}\*.o {build.path}\*.a"
+recipe.hooks.compile.pre.2.pattern=cmd /C "del /F /Q {build.path}\core.a"
 
 # FSP compile patterns
 # -----------------------
@@ -97,41 +99,19 @@ recipe.size.regex=^(?:\.data|\.text|\.rodata)\S*?\s+([0-9]+).*
 recipe.output.tmp_file={build.project_name}.bin
 recipe.output.save_file={build.project_name}.{build.variant}.bin
 
+
 # Uploader tools
 # ---------------------
-tools.serial.cmd=echo
-tools.serial.path=
-tools.serial.upload.pattern="{cmd} Upload triggered for {build.project_name}.bin"
+# Sean Messages
+tools.customUploader.cmd={runtime.platform.path}\\tools\\customUploader\\customUploader.bat
+tools.customUploader.cmd={runtime.platform.path}/tools/customUploader/customUploader.bat
+tools.customUploader.upload.pattern="{cmd}" "{serial.port}" "{upload.file}"
+tools.customUploader.upload.file={build.path}/{build.project_name}.hex
+
+recipe.hooks.upload.pre.1.pattern=cmd /C "echo Hook: Port is {serial.port} 1>&2"
+# /d R7FA4M1AB3CFM /c {serial.port} /b /f "{build.path}/{build.project_name}.bi
 
 # Required discoveries and monitors
 # ---------------------------------
-pluggable_discovery.required.0=builtin:serial-discovery
-pluggable_discovery.required.1=builtin:mdns-discovery
-pluggable_discovery.required.2=builtin:dfu-discovery
-pluggable_monitor.required.serial=builtin:serial-monitor
 
-#
-# Debugger
-#
-
-tools.gdb.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
-tools.gdb.cmd=arm-none-eabi-gdb
-tools.gdb.cmd.windows=arm-none-eabi-gdb.exe
-
-debug.executable={build.path}/{build.project_name}.elf
-debug.toolchain=gcc
-debug.toolchain.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
-debug.toolchain.prefix=arm-none-eabi
-debug.server=openocd
-debug.server.openocd.path={runtime.tools.openocd-0.11.0-arduino2.path}/bin/openocd
-debug.server.openocd.scripts_dir={runtime.tools.openocd-0.11.0-arduino2.path}/share/openocd/scripts/
-
-debug.cortex-debug.custom.postAttachCommands.0=monitor reset halt
-debug.cortex-debug.custom.postAttachCommands.1=monitor gdb_breakpoint_override hard
-debug.cortex-debug.custom.postAttachCommands.2=monitor gdb_sync
-debug.cortex-debug.custom.postAttachCommands.3=c
-debug.cortex-debug.custom.overrideRestartCommands.0=monitor reset halt
-debug.cortex-debug.custom.overrideRestartCommands.1=monitor gdb_sync
-debug.cortex-debug.custom.overrideRestartCommands.2=c
-debug.cortex-debug.custom.request=attach
-this.should.break=💥
+# pluggable_monitor.required.serial=builtin:serial-monitor
