@@ -127,8 +127,8 @@ static const uint8_t SCL = WIRE_SCL_PIN;
 
 #define SPI_HOWMANY       1
 
-#define PIN_SPI_MOSI  (11)
-#define PIN_SPI_MISO  (12)
+#define PIN_SPI_MOSI  (12)
+#define PIN_SPI_MISO  (11)
 #define PIN_SPI_SCK   (13)
 #define PIN_SPI_CS    (10)
 #define FORCE_SPI_MODE  (MODE_SPI)
